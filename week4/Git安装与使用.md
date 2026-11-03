@@ -44,14 +44,14 @@
 
 ## 1. 课前准备
 
-| 需要的东西 | 从哪来 | 大概多大 / 多久 |
-| --- | --- | --- |
-| 第一周装好的 VS Code | 第一周已经装好，直接沿用 | — |
-| **Git for Windows 安装包（.exe）** | 官网下载（本文第 3 节） | 约 **64 MB** |
-| 一个 **Gitee 账号** | [gitee.com](https://gitee.com) 注册（本文第 11 节） | 免费，需手机号 |
-| 一个 **GitHub 账号**（选做） | [github.com](https://github.com) 注册（本文第 12 节） | 免费；国内访问可能不稳定 |
-| 一个纯英文、无空格的练习目录 | 自己建，如 `D:\Code\git-demo` | — |
-| 联网 | 下载安装包、注册 Gitee / GitHub、推送代码时要用 | — |
+| 需要的东西                               | 从哪来                                               | 大概多大 / 多久          |
+| ---------------------------------------- | ---------------------------------------------------- | ------------------------ |
+| 第一周装好的 VS Code                     | 第一周已经装好，直接沿用                             | —                       |
+| **Git for Windows 安装包（.exe）** | 官网下载（本文第 3 节）                              | 约 **64 MB**       |
+| 一个 **Gitee 账号**                | [gitee.com](https://gitee.com) 注册（本文第 11 节）   | 免费，需手机号           |
+| 一个 **GitHub 账号**（选做）       | [github.com](https://github.com) 注册（本文第 12 节） | 免费；国内访问可能不稳定 |
+| 一个纯英文、无空格的练习目录             | 自己建，如 `D:\Code\git-demo`                      | —                       |
+| 联网                                     | 下载安装包、注册 Gitee / GitHub、推送代码时要用      | —                       |
 
 > [!WARNING]
 > **项目路径里不要出现中文和空格。**
@@ -98,14 +98,14 @@ Git 是一个**分布式版本控制系统**（distributed version control syste
 
 Git 把"文件"分成三个区域。这是本周**最重要**的一张表：
 
-| 名词 | 是什么 | 在本课程里的样子 |
-| --- | --- | --- |
-| **工作区**（Working Directory） | 你在资源管理器 / VS Code 里**能直接看到、直接改**的文件夹 | `D:\Code\git-demo\learngit` |
-| **暂存区**（Stage / Index） | 一个"待提交清单"。`git add` 把修改放进来 | 暂存在 `.git` 里，平时看不见 |
-| **本地仓库**（Repository） | `.git` 目录里保存的**提交历史**。`git commit` 把暂存区存成一个快照 | `learngit\.git` |
-| **远程仓库**（Remote） | 放在 Gitee / GitHub 上的仓库，用来备份和协作 | `git@gitee.com:你的用户名/learngit.git` |
-| **HEAD** | 一个指针，指向**你当前所在的分支和提交** | `HEAD -> master` |
-| **origin** | 远程仓库的**默认名字**，只是习惯叫法 | `git remote add origin ...` |
+| 名词                                  | 是什么                                                                       | 在本课程里的样子                          |
+| ------------------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------- |
+| **工作区**（Working Directory） | 你在资源管理器 / VS Code 里**能直接看到、直接改**的文件夹              | `D:\Code\git-demo\learngit`             |
+| **暂存区**（Stage / Index）     | 一个"待提交清单"。`git add` 把修改放进来                                   | 暂存在 `.git` 里，平时看不见            |
+| **本地仓库**（Repository）      | `.git` 目录里保存的**提交历史**。`git commit` 把暂存区存成一个快照 | `learngit\.git`                         |
+| **远程仓库**（Remote）          | 放在 Gitee / GitHub 上的仓库，用来备份和协作                                 | `git@gitee.com:你的用户名/learngit.git` |
+| **HEAD**                        | 一个指针，指向**你当前所在的分支和提交**                               | `HEAD -> master`                        |
+| **origin**                      | 远程仓库的**默认名字**，只是习惯叫法                                   | `git remote add origin ...`             |
 
 用一张图表示文件的流动方向：
 
@@ -131,14 +131,14 @@ Git 把"文件"分成三个区域。这是本周**最重要**的一张表：
 
 Windows 上你会遇到三种命令行窗口。**Git 命令在三种里完全一样**，区别只在"查看文件、删文件"这些系统命令：
 
-| 操作 | PowerShell（VS Code 默认） | CMD | Git Bash |
-| --- | --- | --- | --- |
-| 查看当前目录 | `Get-Location` 或 `pwd` | `cd`（不带参数） | `pwd` |
-| 列出文件 | `dir` 或 `ls` | `dir` | `ls` |
-| 查看文本内容 | `Get-Content readme.txt` 或 `cat readme.txt` | `type readme.txt` | `cat readme.txt` |
-| 删除文件 | `Remove-Item temp.txt` | `del temp.txt` | `rm temp.txt` |
-| 复制到剪贴板 | `Get-Content 文件 \| Set-Clipboard` | `clip < 文件` | `clip < 文件` |
-| 运行当前目录的 exe | `.\hello.exe` | `hello.exe` | `./hello.exe` |
+| 操作               | PowerShell（VS Code 默认）                       | CMD                 | Git Bash           |
+| ------------------ | ------------------------------------------------ | ------------------- | ------------------ |
+| 查看当前目录       | `Get-Location` 或 `pwd`                      | `cd`（不带参数）  | `pwd`            |
+| 列出文件           | `dir` 或 `ls`                                | `dir`             | `ls`             |
+| 查看文本内容       | `Get-Content readme.txt` 或 `cat readme.txt` | `type readme.txt` | `cat readme.txt` |
+| 删除文件           | `Remove-Item temp.txt`                         | `del temp.txt`    | `rm temp.txt`    |
+| 复制到剪贴板       | `Get-Content 文件 \| Set-Clipboard`             | `clip < 文件`     | `clip < 文件`    |
+| 运行当前目录的 exe | `.\hello.exe`                                  | `hello.exe`       | `./hello.exe`    |
 
 本文命令默认写在 **VS Code 的集成终端（PowerShell）** 里。遇到只在 Git Bash 里更方便的命令（例如查看 SSH 公钥），会单独注明。
 
@@ -153,16 +153,16 @@ Windows 上你会遇到三种命令行窗口。**Git 命令在三种里完全一
 
 参考文献是一套很完整的 Git 教程，但它主要面向 **macOS / Linux + GitHub**。本课程主线是 **Windows 11 + Gitee**（第 12 节补充 GitHub 选做）。差异如下，**以本文档为准**：
 
-| 对比项 | 参考文献的做法 | **本课程的实际做法** |
-| --- | --- | --- |
-| 操作系统 | macOS / Linux | Windows 11 |
-| 安装方式 | 官网安装程序，或 `brew` / `apt` / `scoop` 包管理器 | 下载 **Git for Windows 安装包**，双击安装 |
-| 远程平台 | GitHub | **Gitee**（主线，国内访问稳定，界面中文）；GitHub 见第 12 节（选做） |
-| 认证方式 | SSH Key | **SSH Key**（同一把公钥可同时添加到 Gitee 和 GitHub） |
-| 默认分支 | `master` | `master`（Git 2.x 的默认值）；GitHub 新仓库默认 `main`（见第 12.7 节） |
-| 撤销修改 | `git checkout -- <file>` | **`git restore <file>`**（旧写法仍然可用） |
-| 取消暂存 | `git reset HEAD <file>` | **`git restore --staged <file>`**（旧写法仍然可用） |
-| 截图界面 | macOS / GitHub 旧界面 | Windows / Gitee；参考图会注明差别 |
+| 对比项   | 参考文献的做法                                           | **本课程的实际做法**                                                 |
+| -------- | -------------------------------------------------------- | -------------------------------------------------------------------------- |
+| 操作系统 | macOS / Linux                                            | Windows 11                                                                 |
+| 安装方式 | 官网安装程序，或 `brew` / `apt` / `scoop` 包管理器 | 下载 **Git for Windows 安装包**，双击安装                            |
+| 远程平台 | GitHub                                                   | **Gitee**（主线，国内访问稳定，界面中文）；GitHub 见第 12 节（选做） |
+| 认证方式 | SSH Key                                                  | **SSH Key**（同一把公钥可同时添加到 Gitee 和 GitHub）                |
+| 默认分支 | `master`                                               | `master`（Git 2.x 的默认值）；GitHub 新仓库默认 `main`（见第 12.7 节） |
+| 撤销修改 | `git checkout -- <file>`                               | **`git restore <file>`**（旧写法仍然可用）                         |
+| 取消暂存 | `git reset HEAD <file>`                                | **`git restore --staged <file>`**（旧写法仍然可用）                |
+| 截图界面 | macOS / GitHub 旧界面                                    | Windows / Gitee；参考图会注明差别                                          |
 
 > [!IMPORTANT]
 > **以本文档（Windows 11 + Gitee + Git 2.56）为准，参考文献仅供参考。**
@@ -188,7 +188,6 @@ Windows 上你会遇到三种命令行窗口。**Git 命令在三种里完全一
 > 如果版本太低、没有 Git Bash，或者提示"不是内部或外部命令"，就按本节安装。
 
 1. 打开 Git 官网 Windows 下载页：[https://git-scm.com/download/win](https://git-scm.com/download/win)
-
 2. 页面会自动跳转到 **Install for Windows**。找到 **Latest version**，点击 **Click here to download** 或 **Git for Windows/x64 Setup**：
 
 ```text
@@ -197,11 +196,11 @@ Git-2.56.0.3-64-bit.exe
 
 文件约 **64 MB**（以官网下载页显示的为准）。同页面还有几个长得很像的文件，别下错：
 
-| 文件名 | 是什么 | 选不选 |
-| --- | --- | --- |
-| **`Git-2.56.0.3-64-bit.exe`** | 64 位 Windows 安装版 | **选它** |
-| `Git-2.56.0.3-arm64.exe` | ARM 架构电脑版 | 普通 Intel / AMD 笔记本**不要选** |
-| `PortableGit-2.56.0.3-64-bit.7z.exe` | 免安装便携版 | 不想装进系统时选；**要自己配 PATH**，本周不推荐 |
+| 文件名                                 | 是什么               | 选不选                                                |
+| -------------------------------------- | -------------------- | ----------------------------------------------------- |
+| **`Git-2.56.0.3-64-bit.exe`**  | 64 位 Windows 安装版 | **选它**                                        |
+| `Git-2.56.0.3-arm64.exe`             | ARM 架构电脑版       | 普通 Intel / AMD 笔记本**不要选**               |
+| `PortableGit-2.56.0.3-64-bit.7z.exe` | 免安装便携版         | 不想装进系统时选；**要自己配 PATH**，本周不推荐 |
 
 > [!WARNING]
 > **只从官网 `git-scm.com` 下载**，不要从"软件下载站"、网盘、群文件里下。那些渠道的安装包可能被捆绑广告或篡改。
@@ -216,12 +215,12 @@ Git-2.56.0.3-64-bit.exe
 
 安装向导有很多页。**大部分页面直接点 Next 即可**，但下面 4 处请按本文档选择：
 
-| 向导页面 | 选择 | 为什么 |
-| --- | --- | --- |
-| **Choosing the default editor**（默认编辑器） | **Use Visual Studio Code as Git's default editor** | 默认是 Vim，零基础同学很容易卡在"怎么退出" |
-| **Adjusting your PATH environment**（PATH 环境） | **Git from the command line and also from 3rd-party software** | 这样 PowerShell、VS Code 终端里才能直接敲 `git` |
-| **Configuring the line ending conversions**（换行符） | **Checkout Windows-style, commit Unix-style line endings** | Windows 默认选项；Git 内部统一用 LF，检出时转成 CRLF |
-| **Choosing the default branch name**（如果出现） | **Let Git decide**（当前为 `master`） | 与参考文献、Gitee 默认分支保持一致 |
+| 向导页面                                                    | 选择                                                                 | 为什么                                               |
+| ----------------------------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------- |
+| **Choosing the default editor**（默认编辑器）         | **Use Visual Studio Code as Git's default editor**             | 默认是 Vim，零基础同学很容易卡在"怎么退出"           |
+| **Adjusting your PATH environment**（PATH 环境）      | **Git from the command line and also from 3rd-party software** | 这样 PowerShell、VS Code 终端里才能直接敲 `git`    |
+| **Configuring the line ending conversions**（换行符） | **Checkout Windows-style, commit Unix-style line endings**     | Windows 默认选项；Git 内部统一用 LF，检出时转成 CRLF |
+| **Choosing the default branch name**（如果出现）      | **Let Git decide**（当前为 `master`）                        | 与参考文献、Gitee 默认分支保持一致                   |
 
 其余页面保持默认：
 
@@ -502,14 +501,14 @@ git commit -m "wrote a readme file"
 
 逐项解释：
 
-| 输出 | 含义 |
-| --- | --- |
-| `master` | 当前分支名 |
-| `root-commit` | 这是仓库的第一次提交（根提交） |
-| `3f2a1c9` | 本次提交的 **commit ID**（版本号），你的和这里**一定不一样** |
-| `1 file changed` | 有 1 个文件被改动 |
-| `2 insertions(+)` | 新增了 2 行内容 |
-| `create mode 100644 readme.txt` | 新建了 `readme.txt` |
+| 输出                              | 含义                                                                     |
+| --------------------------------- | ------------------------------------------------------------------------ |
+| `master`                        | 当前分支名                                                               |
+| `root-commit`                   | 这是仓库的第一次提交（根提交）                                           |
+| `3f2a1c9`                       | 本次提交的 **commit ID**（版本号），你的和这里**一定不一样** |
+| `1 file changed`                | 有 1 个文件被改动                                                        |
+| `2 insertions(+)`               | 新增了 2 行内容                                                          |
+| `create mode 100644 readme.txt` | 新建了 `readme.txt`                                                    |
 
 > [!IMPORTANT]
 > **`-m` 后面是提交说明，必须写清楚这次改了什么。**
@@ -840,12 +839,12 @@ git reset --hard HEAD^
 
 参考文献写于较早年，用的是旧命令。两种写法现在都能用，本文用新写法：
 
-| 目的 | 本文写法（Git 2.23+） | 参考文献 / 老教程写法 |
-| --- | --- | --- |
-| 丢弃工作区修改 | `git restore <file>` | `git checkout -- <file>` |
-| 取消暂存（unstage） | `git restore --staged <file>` | `git reset HEAD <file>` |
-| 切换分支 | `git switch <branch>` | `git checkout <branch>` |
-| 创建并切换分支 | `git switch -c <branch>` | `git checkout -b <branch>` |
+| 目的                | 本文写法（Git 2.23+）           | 参考文献 / 老教程写法        |
+| ------------------- | ------------------------------- | ---------------------------- |
+| 丢弃工作区修改      | `git restore <file>`          | `git checkout -- <file>`   |
+| 取消暂存（unstage） | `git restore --staged <file>` | `git reset HEAD <file>`    |
+| 切换分支            | `git switch <branch>`         | `git checkout <branch>`    |
+| 创建并切换分支      | `git switch -c <branch>`      | `git checkout -b <branch>` |
 
 > [!NOTE]
 > 你在网上看到 `git checkout -- readme.txt`，它的效果和 `git restore readme.txt` 一样，只是老写法。
@@ -992,13 +991,13 @@ git commit -m "add gitignore"
 
 本课程改用 **Gitee（码云）**，它是国内的代码托管平台，访问速度快，界面中文。**Git 命令完全一样**，只是远程地址和账号不同：
 
-| 对比项 | 参考文献：GitHub | **本课程：Gitee** |
-| --- | --- | --- |
-| 网址 | `github.com` | `gitee.com` |
-| 国内访问 | 不稳定 | 稳定、速度快 |
+| 对比项       | 参考文献：GitHub                       | **本课程：Gitee**               |
+| ------------ | -------------------------------------- | ------------------------------------- |
+| 网址         | `github.com`                         | `gitee.com`                         |
+| 国内访问     | 不稳定                                 | 稳定、速度快                          |
 | 仓库地址示例 | `git@github.com:用户名/learngit.git` | `git@gitee.com:用户名/learngit.git` |
-| 默认分支 | 新仓库常用 `main` | 常用 `master` |
-| 界面语言 | 英文为主 | 中文 |
+| 默认分支     | 新仓库常用 `main`                    | 常用 `master`                       |
+| 界面语言     | 英文为主                               | 中文                                  |
 
 > [!IMPORTANT]
 > **课程作业以第 11 节的 Gitee 路线为准；GitHub 放在第 12 节，作为选做拓展。**
@@ -1133,15 +1132,15 @@ Hi 你的用户名! You've successfully authenticated, but GITEE.COM does not pr
 1. 登录 Gitee，点击右上角的 **`+`** → **新建仓库**。
 2. 填写：
 
-| 字段 | 填什么 |
-| --- | --- |
-| **仓库名称** | `learngit` |
-| **路径** | 一般自动填 `learngit`；如果被占用，改成 `learngit-你的学号` |
-| **仓库介绍** | 可不填，或写 `学习 Git` |
-| **开源 / 私有** | 练习建议选 **私有** |
-| **初始化仓库** | **不要勾选** |
-| **设置模板** | **不要勾选** |
-| **选择分支模型** | **不要选** |
+| 字段                   | 填什么                                                          |
+| ---------------------- | --------------------------------------------------------------- |
+| **仓库名称**     | `learngit`                                                    |
+| **路径**         | 一般自动填 `learngit`；如果被占用，改成 `learngit-你的学号` |
+| **仓库介绍**     | 可不填，或写 `学习 Git`                                       |
+| **开源 / 私有**  | 练习建议选 **私有**                                       |
+| **初始化仓库**   | **不要勾选**                                              |
+| **设置模板**     | **不要勾选**                                              |
+| **选择分支模型** | **不要选**                                                |
 
 3. 点击 **创建**。
 
@@ -1308,16 +1307,16 @@ git push -u origin master
 
 ### 12.1 GitHub 与 Gitee 的差异
 
-| 对比项 | Gitee（第 11 节，课程主线） | GitHub（本节，选做） |
-| --- | --- | --- |
-| 网址 | `gitee.com` | `github.com` |
-| 国内访问 | 一般稳定 | **不稳定**，可能需要换网络（校园网、手机热点） |
-| 界面语言 | 中文 | 英文为主 |
-| 仓库地址 | `git@gitee.com:你的空间地址/learngit.git` | `git@github.com:你的用户名/learngit.git` |
-| 添加 SSH 公钥 | 设置 → SSH 公钥 | Settings → SSH and GPG keys |
-| 新仓库默认分支 | 常见 `master` | **`main`** |
-| 私有仓库 | 免费账号可用 | 免费账号可建私有仓库；协作者人数上限以官网为准 |
-| HTTPS 推送认证 | 账号密码或私人令牌 | **不能用账号密码，必须用个人访问令牌（PAT）** |
+| 对比项         | Gitee（第 11 节，课程主线）                 | GitHub（本节，选做）                                 |
+| -------------- | ------------------------------------------- | ---------------------------------------------------- |
+| 网址           | `gitee.com`                               | `github.com`                                       |
+| 国内访问       | 一般稳定                                    | **不稳定**，可能需要换网络（校园网、手机热点） |
+| 界面语言       | 中文                                        | 英文为主                                             |
+| 仓库地址       | `git@gitee.com:你的空间地址/learngit.git` | `git@github.com:你的用户名/learngit.git`           |
+| 添加 SSH 公钥  | 设置 → SSH 公钥                            | Settings → SSH and GPG keys                         |
+| 新仓库默认分支 | 常见 `master`                             | **`main`**                                   |
+| 私有仓库       | 免费账号可用                                | 免费账号可建私有仓库；协作者人数上限以官网为准       |
+| HTTPS 推送认证 | 账号密码或私人令牌                          | **不能用账号密码，必须用个人访问令牌（PAT）**  |
 
 > [!IMPORTANT]
 > **同一台电脑的同一对 SSH Key，可以同时添加到 Gitee 和 GitHub，不需要重新生成。**
@@ -1415,15 +1414,15 @@ Hi 你的用户名! You've successfully authenticated, but GitHub does not provi
 1. 登录 GitHub，点击右上角的 **`+`** → **New repository**。
 2. 填写：
 
-| 字段 | 填什么 |
-| --- | --- |
-| **Owner** | 你的账号 |
-| **Repository name** | `learngit`（如果提示已存在，改成 `learngit-你的学号`） |
-| **Description** | 可不填 |
-| **Visibility** | 练习选 **Private** |
-| **Add a README file** | **不要勾选** |
-| **Add .gitignore** | **不要勾选** |
-| **Choose a license** | **不要勾选** |
+| 字段                        | 填什么                                                     |
+| --------------------------- | ---------------------------------------------------------- |
+| **Owner**             | 你的账号                                                   |
+| **Repository name**   | `learngit`（如果提示已存在，改成 `learngit-你的学号`） |
+| **Description**       | 可不填                                                     |
+| **Visibility**        | 练习选 **Private**                                   |
+| **Add a README file** | **不要勾选**                                         |
+| **Add .gitignore**    | **不要勾选**                                         |
+| **Choose a license**  | **不要勾选**                                         |
 
 3. 点击 **Create repository**。
 4. 在新仓库页面的 **Quick setup** 区域，点击 **SSH**，复制形如下面的地址：
@@ -1553,10 +1552,10 @@ GitHub 从 2020 年起把新仓库的默认分支名定为 **`main`**；而本�
 
 两种处理方式：
 
-| 做法 | 命令 | 适用情况 |
-| --- | --- | --- |
-| **保持 `master`** | 直接 `git push github master`（情况 B 用 `git push origin master`） | 已经和 Gitee 同步，或不想折腾分支名；**本课程推荐** |
-| **改成 `main`** | `git branch -M main`，再 `git push -u origin main` | **只在仓库还没推送过任何远程时使用**；想和 GitHub 惯例一致 |
+| 做法                      | 命令                                                                    | 适用情况                                                         |
+| ------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| **保持 `master`** | 直接 `git push github master`（情况 B 用 `git push origin master`） | 已经和 Gitee 同步，或不想折腾分支名；**本课程推荐**        |
+| **改成 `main`**   | `git branch -M main`，再 `git push -u origin main`                  | **只在仓库还没推送过任何远程时使用**；想和 GitHub 惯例一致 |
 
 > [!IMPORTANT]
 > **已经推到 Gitee 的仓库，不要随便把本地 `master` 改名成 `main`。**
@@ -1996,15 +1995,15 @@ git push -u origin master
 
 本文共 **7 张**截图（`images/01` – `images/07`），**全部来自参考文献**；其中图 6 的公钥内容由本课程助教打码处理。
 
-| 图号 | 内容 | 出现位置 | 来源 |
-| --- | --- | --- | --- |
-| 图 1 | Git Bash 启动窗口（Git 1.8.3，2013 年截图） | 第 3.3 节 | 参考文献《安装Git》 |
-| 图 2 | 工作区示例（macOS Finder） | 第 7.1 节 | 参考文献《工作区和暂存区》 |
-| 图 3 | 工作区、版本库、暂存区、HEAD 关系图 | 第 7.1 节 | 参考文献《工作区和暂存区》 |
-| 图 4 | `git add` 把文件放进暂存区 | 第 7.1 节 | 参考文献《工作区和暂存区》 |
-| 图 5 | `git commit` 把暂存区提交到分支 | 第 7.1 节 | 参考文献《工作区和暂存区》 |
-| 图 6 | Gitee「设置 → SSH 公钥」页面 | 第 11.4 节 | 参考文献《使用Gitee》；公钥已打码 |
-| 图 7 | Gitee「新建仓库」页面 | 第 11.5 节 | 参考文献《使用Gitee》 |
+| 图号 | 内容                                        | 出现位置   | 来源                              |
+| ---- | ------------------------------------------- | ---------- | --------------------------------- |
+| 图 1 | Git Bash 启动窗口（Git 1.8.3，2013 年截图） | 第 3.3 节  | 参考文献《安装Git》               |
+| 图 2 | 工作区示例（macOS Finder）                  | 第 7.1 节  | 参考文献《工作区和暂存区》        |
+| 图 3 | 工作区、版本库、暂存区、HEAD 关系图         | 第 7.1 节  | 参考文献《工作区和暂存区》        |
+| 图 4 | `git add` 把文件放进暂存区                | 第 7.1 节  | 参考文献《工作区和暂存区》        |
+| 图 5 | `git commit` 把暂存区提交到分支           | 第 7.1 节  | 参考文献《工作区和暂存区》        |
+| 图 6 | Gitee「设置 → SSH 公钥」页面               | 第 11.4 节 | 参考文献《使用Gitee》；公钥已打码 |
+| 图 7 | Gitee「新建仓库」页面                       | 第 11.5 节 | 参考文献《使用Gitee》             |
 
 **说明**：
 
