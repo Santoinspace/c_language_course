@@ -2,8 +2,9 @@ instruct*.md
 material
 tmp/
 .vscode
-final_project/
-
+# The course template ships its own VS Code tasks/settings
+!raylib_project_template/.vscode/
+TEACHER_GUIDE.md
 
 # Prerequisites
 *.d
@@ -52,6 +53,8 @@ final_project/
 # Kernel Module Compile Results
 *.mod*
 *.cmd
+# Course helper scripts must be tracked even though *.cmd is ignored above
+!raylib_project_template/tools/*.cmd
 .tmp_versions/
 modules.order
 Module.symvers

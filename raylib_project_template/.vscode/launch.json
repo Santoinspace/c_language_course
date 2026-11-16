@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug C project (requires gdb.exe)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\build\\c_final_project.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb.exe",
+            "preLaunchTask": "02 Build (mingw32-make)"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+# Out-of-source CMake build outputs
+/build/
+/cmake-build-*/
+/CMakeFiles/
+/CMakeCache.txt
+/compile_commands.json
+
+# Generated executables, object files and libraries
+*.exe
+*.o
+*.obj
+*.a
+*.dll
+*.pdb
+*.ilk
+
+# Local, generated user data; keep data/.gitkeep tracked
+/data/*
+!/data/.gitkeep
+
+# VS Code machine-specific data
+.vscode/.browse.VC.db*
+.vscode/ipch/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Optional local offline raylib source, never add it accidentally
+/third_party/raylib/

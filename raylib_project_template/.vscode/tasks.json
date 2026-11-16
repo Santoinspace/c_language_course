@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "01 Configure (MinGW Makefiles)",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-S", ".", "-B", "build",
+                "-G", "MinGW Makefiles",
+                "-DCMAKE_C_COMPILER=gcc",
+                "-DCMAKE_BUILD_TYPE=Debug"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "02 Build (mingw32-make)",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["--build", "build", "--parallel", "4"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "03 Test (CTest)",
+            "type": "shell",
+            "command": "ctest",
+            "args": ["--test-dir", "build", "--output-on-failure"],
+            "problemMatcher": []
+        },
+        {
+            "label": "04 Run demo",
+            "type": "shell",
+            "command": "${workspaceFolder}\\build\\c_final_project.exe",
+            "options": { "cwd": "${workspaceFolder}" },
+            "problemMatcher": []
+        }
+    ]
+}

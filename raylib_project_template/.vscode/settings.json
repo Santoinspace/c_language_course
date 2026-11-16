@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.h": "c"
+    },
+    "C_Cpp.default.cStandard": "c99",
+    "C_Cpp.default.compilerPath": "gcc.exe",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json"
+}
