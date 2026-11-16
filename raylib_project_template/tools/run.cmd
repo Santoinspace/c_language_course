@@ -1,4 +1,5 @@
 @echo off
+REM Run the program from the project root so data/best_score.txt resolves.
 setlocal
 cd /d "%~dp0.."
 if not exist "build\c_final_project.exe" (

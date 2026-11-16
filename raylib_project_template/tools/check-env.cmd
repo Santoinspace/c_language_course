@@ -1,4 +1,5 @@
 @echo off
+REM Check that gcc, mingw32-make, cmake and git are available in PATH.
 setlocal
 set ERR=0
 echo === Course Toolchain Check (Windows CMD / VS Code Terminal) ===

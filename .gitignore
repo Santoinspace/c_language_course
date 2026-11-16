@@ -2,6 +2,7 @@ instruct*.md
 material
 tmp/
 .vscode
+Teacher/
 # The course template ships its own VS Code tasks/settings
 !raylib_project_template/.vscode/
 TEACHER_GUIDE.md

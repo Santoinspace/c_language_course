@@ -1,4 +1,6 @@
 @echo off
+REM Generate build/ in the project root; the first run downloads raylib 6.0.
+REM This script lives in tools/, so %~dp0.. is the project root.
 setlocal
 cd /d "%~dp0.."
 echo [Course] Configuring with CMake MinGW Makefiles...

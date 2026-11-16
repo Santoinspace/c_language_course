@@ -45,6 +45,7 @@ cd ..
 
 ## 学生真正要改哪些内容？
 
+- 在工程中搜索 `TODO(STUDENT)`，即可定位需要你修改或新增代码的位置。
 - 编辑 `src/main.c`，完成你的游戏/应用；`src/score.c` 与 `include/score.h` 是模块化示例。
 - 自己新增 `.c`、`.h` 文件，并把新 `.c` 文件写进 `CMakeLists.txt` 的 `add_executable` 列表。
 - 每完成一个阶段，使用 `git add`、`git commit`、`git push` 管理提交历史。
