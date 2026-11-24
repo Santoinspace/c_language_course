@@ -9,7 +9,7 @@
 | # | 操作 | 结果 | 避免 |
 |---|---|---|---|
 | 1 | 新开终端，依次执行 `gcc --version`、`mingw32-make --version`、`cmake --version`、`git --version` | 四条都输出版本信息；`cmake` 版本 ≥ 3.24 | 在 Git Bash/MSYS 里执行这些命令 |
-| 2 | 把模板复制到 `D:\Code\c-final`；没有 D 盘改用 `C:\Code\c-final` 或其他纯英文目录 | 根目录能看到 `CMakeLists.txt`、`src`、`include`、`build.cmd` | 路径含中文或空格；放在中文用户名下 |
+| 2 | 把模板复制到 `D:\Code\c-final`；没有 D 盘改用 `C:\Code\c-final` 或其他纯英文目录 | 根目录能看到 `CMakeLists.txt`、`src`、`include`、`tools\configure.cmd` | 路径含中文或空格；放在中文用户名下 |
 | 3 | VS Code 里 **文件 → 打开文件夹**，选择 `D:\Code\c-final` | 左侧资源管理器显示 `src/`、`include/`、`tests/`、`data/` | 只打开了单个 `.c` 文件，或打开了上一级目录 |
 | 4 | 终端执行 `cmd /c tools\check-env.cmd` | 末尾出现 `[OK] Ready to configure.` | 看到 `[MISSING]` 仍继续往下做 |
 
@@ -18,9 +18,9 @@
 | # | 操作 | 结果 | 避免 |
 |---|---|---|---|
 | 5 | 确认终端在项目根目录，执行 `cmake -S . -B build -G "MinGW Makefiles" -DCMAKE_C_COMPILER=gcc -DCMAKE_BUILD_TYPE=Debug` | 出现 `Configuring done`、`Generating done`、`Build files have been written to`（[图 3](images/03-cmake-configure.png)） | 生成器名拼错、漏引号；不在项目根目录执行 |
-| 6 | 首次配置时等待下载 raylib 6.0（约 1–3 分钟） | 输出含 `raylib source: fixed Git tag 6.0`；生成 `build/_deps/raylib-src/` | 网络失败时反复重配；把 `GIT_TAG` 改成 6.2 |
+| 6 | 首次配置：联网模式等待下载 raylib 6.0（约 1–3 分钟）；已放 `third_party/raylib/` 时直接走离线模式 | 联网模式输出 `raylib source: fixed Git tag 6.0`，生成 `build/_deps/raylib-src/`；离线模式输出 `raylib source: third_party/raylib (offline)`，生成 `build/raylib-local-build/` | 网络失败时反复重配；把 `GIT_TAG` 改成 6.2 |
 | 7 | 查看 `build/` 目录大小 | 可能达到几百 MB，属正常现象 | 把 `build/` 提交进 Git |
-| 8 | （选做）打开 `build/_deps/raylib-src/src/raylib.h`，搜索 `RAYLIB_VERSION` | 看到 `#define RAYLIB_VERSION "6.0"` | 以为课程用的是 6.2 |
+| 8 | （选做）打开 `third_party/raylib/src/raylib.h`（离线）或 `build/_deps/raylib-src/src/raylib.h`（联网），搜索 `RAYLIB_VERSION` | 看到 `#define RAYLIB_VERSION "6.0"` | 以为课程用的是 6.2 |
 
 ## C. 编译与测试
 
@@ -68,4 +68,4 @@
 
 | # | 操作 | 结果 | 避免 |
 |---|---|---|---|
-| 26 | （选做）按作业 3 给游戏加计时或生命值 | 窗口里出现秒数或生命值，按 R 能重置 | 改了结构体字段，但函数仍用值传参，界面数字不变 |
+| 26 | （选做）给游戏加计时或生命值 | 窗口里出现秒数或生命值，按 R 能重置 | 改了结构体字段，但函数仍用值传参，界面数字不变 |

@@ -94,7 +94,9 @@ static void DrawGame(const GameState *game)
     BeginDrawing();
     ClearBackground(RAYWHITE);
     DrawRectangle(0, 0, SCREEN_WIDTH, 70, (Color){235, 241, 250, 255});
+    // DrawText(text, posX, posY, fontSize, color)
     DrawText("C99 + raylib | Collect the coins", 20, 12, 24, DARKBLUE);
+    // 类似于printf
     DrawText(TextFormat("Score: %d    Best: %d", game->score, game->best_score),
              20, 43, 19, DARKGRAY);
     DrawRectangleRec(game->player, BLUE);
